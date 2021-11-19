@@ -48,10 +48,10 @@ $ git clone https://github.com/Bytom/bystack.git $GOPATH/src/github.com/bytom/by
 ``` bash
 $ cd $GOPATH/src/github.com/bytom/bystack
 $ make bystackd    # build bystackd
-$ make bystackd  # build bystackd
+$ make bystackcli  # build bystackcli
 ```
 
-When successfully building the project, the `bystackd` and `bystackd` binary should be present in `cmd/bystackd` and `cmd/bystackd` directory, respectively.
+When successfully building the project, the `bystackd` and `bystackcli` binary should be present in `cmd/bystackd` and `cmd/bystackcli` directory, respectively.
 
 ### Executables
 
@@ -60,11 +60,11 @@ The Bystack project comes with several executables found in the `cmd` directory.
 | Command      | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
 | **bystackd**   | bystackd command can help to initialize and launch bystack domain by custom parameters. `bystackd --help` for command line options. |
-| **bystackd** | Our main Bystack CLI client. It is the entry point into the Bystack network (main-, test- or private net), capable of running as a full node archive node (retaining all historical state). It can be used by other processes as a gateway into the Bystack network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `bystackd --help` and the [bystackd Wiki page](https://github.com/Bytom/bystack/wiki/Command-Line-Options) for command line options. |
+| **bystackcli** | Our main Bystack CLI client. It is the entry point into the Bystack network (main-, test- or private net), capable of running as a full node archive node (retaining all historical state). It can be used by other processes as a gateway into the Bystack network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `bystackcli --help` and the [bystackd Wiki page](https://github.com/Bytom/bystack/wiki/Command-Line-Options) for command line options. |
 
 ## Running bystack
 
-Currently, bystack is still in active development and a ton of work needs to be done, but we also provide the following content for these eager to do something with `bystack`. This section won't cover all the commands of `bystackd` and `bystackd` at length, for more information, please the help of every command, e.g., `bystackd help`.
+Currently, bystack is still in active development and a ton of work needs to be done, but we also provide the following content for these eager to do something with `bystack`. This section won't cover all the commands of `bystackd` and `bystackcli` at length, for more information, please the help of every command, e.g., `bystackd help`.
 
 ### Initialize
 
