@@ -1,5 +1,5 @@
 # Build Bystack in a stock Go builder container
-FROM golang:1.9-alpine as builder
+FROM golang:1.15.5-alpine as builder
 
 RUN apk add --no-cache make git
 
