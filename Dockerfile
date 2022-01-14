@@ -3,6 +3,8 @@ FROM golang:1.9-alpine as builder
 
 RUN apk add --no-cache make git
 
+ENV GOPROXY=https://goproxy.cn,direct
+
 ADD . /go/src/github.com/bytom/bystack
 RUN cd /go/src/github.com/bytom/bystack && make bystackd && make bystackcli
 
