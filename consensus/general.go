@@ -132,7 +132,7 @@ var MainNetParams = Params{
 			{BeginBlock: 432000, EndBlock: math.MaxUint64, Num: defaultVotePendingNum},
 		},
 		FederationXpubs: []chainkd.XPub{
-			xpub("0350f12a42b1fec3945d05bcdc91cc179d3cf04fc7f401d69eff47b9a49b24ee585c6a09877b04fea18630526ead889f14e44e5896746dc3af8dc4c41fa5ad40ac"),
+			xpub("021f661be770020bfae874ab6eeb3e403d18e03ef6b09b0583557f0e11b339f54e36bfd1a80ce0273cc966709f3751211be0a41a2afcb7f130b1b5ed679e8c8fc3"),
 		},
 	},
 }
