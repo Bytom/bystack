@@ -1,7 +1,7 @@
 # Build Bystack in a stock Go builder container
-FROM golang:1.15.5-alpine as builder
+FROM golang:1.15.6-alpine as builder
 
-RUN apk add --no-cache make git
+RUN apk add --no-cache make
 
 ENV GOPROXY=https://goproxy.cn,direct
 
