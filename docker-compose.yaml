@@ -1,0 +1,10 @@
+version: '2'
+services:
+  bystack:
+    image: bystack
+    container_name: bystack
+    restart: on-failure
+    command: ["sh", "-c", "bystackd node --auth.disable --mining"]
+    volumes:
+      - /root/data/bystack:/root/.bystack
+    network_mode: host
