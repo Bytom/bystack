@@ -54,5 +54,5 @@ func initFiles(cmd *cobra.Command, args []string) {
 		log.WithFields(log.Fields{"pubkey": xprv.XPub()}).Info("success generate private")
 	}
 
-	log.WithFields(log.Fields{"module": logModule, "config": configFilePath}).Info("Initialized bytom")
+	log.WithFields(log.Fields{"module": logModule, "config": configFilePath}).Info("Initialized bystack")
 }
