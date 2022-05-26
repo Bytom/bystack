@@ -4,7 +4,7 @@ services:
     image: bystack
     container_name: bystack
     restart: on-failure
-    command: ["sh", "-c", "bystackd node"]
+    command: ["sh", "-c", "bystackd node --auth.disable"]
     volumes:
       - /root/.bystack:/root/.bystack
     network_mode: host
