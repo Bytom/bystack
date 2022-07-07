@@ -25,6 +25,8 @@ const (
 	InitBTMSupply      = 169290721678579170 + 50000000000
 	RewardThreshold    = 0.5
 	BlockReward        = uint64(570776255)
+	MaxSupply          = uint64(2 << 61)
+	RewardHeight       = uint64(30) // need modify for prod
 
 	// config parameter for coinbase reward
 	CoinbasePendingBlockNumber = uint64(10)
@@ -190,4 +192,25 @@ func xpub(str string) (xpub chainkd.XPub) {
 		log.Panicf("Fail converts a string to xpub")
 	}
 	return xpub
+}
+
+// GetCoinBaseReward get the coinbase reward, get all rewards when call it first time.
+func GetCoinBaseReward(height uint64) uint64 {
+	if height == RewardHeight {
+		totalSupply := height*BlockReward/2 + InitBTMSupply
+		return MaxSupply - totalSupply
+	} else if height > RewardHeight {
+		return 0
+	}
+
+	return BlockReward
+}
+
+// GetTotalSupply get total supply
+func GetTotalSupply(height uint64) uint64 {
+	if height >= RewardHeight {
+		return MaxSupply
+	}
+
+	return height*BlockReward/2 + InitBTMSupply
 }

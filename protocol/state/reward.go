@@ -9,10 +9,10 @@ import (
 
 func (c *Checkpoint) validatorReward() uint64 {
 	if pledgeRate := c.pledgeRate(); pledgeRate <= consensus.RewardThreshold {
-		return uint64((pledgeRate + consensus.RewardThreshold) * float64(consensus.BlockReward))
+		return uint64((pledgeRate + consensus.RewardThreshold) * float64(consensus.GetCoinBaseReward(c.Height)))
 	}
 
-	return consensus.BlockReward
+	return consensus.GetCoinBaseReward(c.Height)
 }
 
 // pledgeRate validator's pledge rate
@@ -22,7 +22,7 @@ func (c *Checkpoint) pledgeRate() float64 {
 		totalVotes += vote
 	}
 
-	totalSupply := c.Height*consensus.BlockReward/2 + consensus.InitBTMSupply
+	totalSupply := consensus.GetTotalSupply(c.Height)
 	return float64(totalVotes) / float64(totalSupply)
 }
 
