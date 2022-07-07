@@ -61,16 +61,8 @@ func checkCoinbaseAmount(b *types.Block, checkpoint *state.Checkpoint) error {
 
 func checkoutRewardCoinbase(tx *types.Tx, checkpoint *state.Checkpoint) error {
 	outputMap := map[string]uint64{}
-	for i, output := range tx.Outputs {
-		if i == 0 && output.Amount == 0 {
-			continue
-		}
-
+	for _, output := range tx.Outputs {
 		outputMap[hex.EncodeToString(output.ControlProgram)] += output.Amount
-	}
-
-	if len(outputMap) != len(checkpoint.Rewards) {
-		return errors.Wrap(ErrWrongCoinbaseTransaction, "dismatch output number")
 	}
 
 	for cp, amount := range checkpoint.Rewards {
