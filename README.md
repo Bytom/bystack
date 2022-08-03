@@ -16,12 +16,6 @@ In the current state `bystack` is able to:
 - Manage key, account as well as asset
 - Send transactions, i.e., issue, spend and retire asset
 
-## Installing with Homebrew
-
-```
-brew tap bytom/bystack && brew install bystack
-```
-
 ## Building from source
 
 ### Requirements
